@@ -9,11 +9,12 @@
     <version>3.4.5</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+
   <groupId>com.github.gbaso</groupId>
   <artifactId>web-mvc-test-saml2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>web-mvc-test-saml2</name>
-  <description>web-mvc-test-saml2</description>
+
   <url/>
   <licenses>
     <license/>
@@ -27,9 +28,11 @@
     <tag/>
     <url/>
   </scm>
+
   <properties>
     <java.version>21</java.version>
   </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -38,6 +41,26 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-saml2-service-provider</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.opensaml</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opensaml</groupId>
+      <artifactId>opensaml-saml-api</artifactId>
+      <version>5.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opensaml</groupId>
+      <artifactId>opensaml-saml-impl</artifactId>
+      <version>5.1.2</version>
     </dependency>
 
     <dependency>
@@ -60,5 +83,16 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <repository>
+      <id>shibboleth-releases</id>
+      <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+    </repository>
+  </repositories>
 
 </project>
