@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: web-mvc-test-saml2
